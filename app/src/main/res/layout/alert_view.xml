@@ -1,69 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    >
-
-    <EditText
-        android:id="@+id/courseName"
-        android:hint="Enter the course name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="6dp"
+    app:cardCornerRadius="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:padding="15dp">
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
         <TextView
-            android:id="@+id/grade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grade"
-            android:layout_weight="1"
-            android:gravity="center"
-            />
+            android:text="Add a new Item"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/credit"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/courseName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Credit"
-            android:layout_weight="1"
-            android:gravity="center"
-            />
+            android:hint="Enter course name"
+            android:minHeight="48dp"
+            android:layout_marginHorizontal="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grade"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/creditTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credit"
+                android:layout_weight="1"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <NumberPicker
+                android:id="@+id/gradePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="15dp"
+                />
+            <NumberPicker
+                android:id="@+id/creditPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="15dp"
+                />
+
+        </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:weightSum="2"
+         android:layout_marginVertical="8dp">
+
+         <Button
+             android:id="@+id/btnAdd"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:layout_marginHorizontal="20dp"
+             android:text="Cancel"
+             android:backgroundTint="#53A5C2"/>
+         <Button
+             android:id="@+id/btnCancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:layout_marginHorizontal="20dp"
+             android:text="Add"
+             android:backgroundTint="#C26D97"/>
+
+     </LinearLayout>
 
     </LinearLayout>
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:weightSum="2">
-
-      <NumberPicker
-          android:id="@+id/gradePicker"
-          android:layout_width="wrap_content"
-          android:layout_height="70dp"
-          android:layout_weight="1"
-          android:layout_marginHorizontal="15dp"
-          />
-      <NumberPicker
-          android:id="@+id/creditPicker"
-          android:layout_width="wrap_content"
-          android:layout_height="70dp"
-          android:layout_weight="1"
-          android:layout_marginHorizontal="15dp"
-          />
-
-  </LinearLayout>
 
 
 
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>
