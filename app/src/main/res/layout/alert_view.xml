@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+
+    <EditText
+        android:id="@+id/courseName"
+        android:hint="Enter the course name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grade"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/credit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:weightSum="2">
+
+      <NumberPicker
+          android:id="@+id/gradePicker"
+          android:layout_width="wrap_content"
+          android:layout_height="70dp"
+          android:layout_weight="1"
+          android:layout_marginHorizontal="15dp"
+          />
+      <NumberPicker
+          android:id="@+id/creditPicker"
+          android:layout_width="wrap_content"
+          android:layout_height="70dp"
+          android:layout_weight="1"
+          android:layout_marginHorizontal="15dp"
+          />
+
+  </LinearLayout>
+
+
+
+
+</LinearLayout>
