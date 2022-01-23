@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="6dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    android:layout_gravity="center_horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add a new Item"
+            android:text="Add a new course"
             android:layout_gravity="center"
             android:layout_margin="12dp"
             android:textSize="18sp"
@@ -34,24 +35,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:padding="15dp">
+            android:padding="5dp"
+            >
 
             <TextView
                 android:id="@+id/grade"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Grade"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
 
             <TextView
                 android:id="@+id/creditTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Credit"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
                 />
 
         </LinearLayout>
@@ -61,22 +67,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
-
             <NumberPicker
                 android:id="@+id/gradePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
+                android:theme="@style/AppTheme.Picker"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="15dp"
+                android:selectionDividerHeight="0.75dp"
+                android:dividerPadding="15dp"
                 />
             <NumberPicker
                 android:id="@+id/creditPicker"
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
+                android:theme="@style/AppTheme.Picker"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="15dp"
+                android:selectionDividerHeight="0.75dp"
+                android:dividerPadding="15dp"
                 />
-
         </LinearLayout>
 
      <LinearLayout
@@ -84,30 +94,30 @@
          android:layout_height="wrap_content"
          android:orientation="horizontal"
          android:weightSum="2"
-         android:layout_marginVertical="8dp">
+         android:layout_marginTop="18dp"
+         android:layout_marginBottom="10dp">
+
+         <Button
+             android:id="@+id/btnCancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginHorizontal="20dp"
+             android:layout_weight="1"
+             android:backgroundTint="#53A5C2"
+             android:text="Cancel"
+             android:textColor="#fff" />
 
          <Button
              android:id="@+id/btnAdd"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_weight="1"
              android:layout_marginHorizontal="20dp"
-             android:text="Cancel"
-             android:backgroundTint="#53A5C2"/>
-         <Button
-             android:id="@+id/btnCancel"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
              android:layout_weight="1"
-             android:layout_marginHorizontal="20dp"
+             android:backgroundTint="#C26D97"
              android:text="Add"
-             android:backgroundTint="#C26D97"/>
+             android:textColor="#fff" />
 
      </LinearLayout>
-
     </LinearLayout>
-
-
-
 
 </androidx.cardview.widget.CardView>
