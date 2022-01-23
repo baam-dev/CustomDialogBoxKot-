@@ -28,12 +28,14 @@ class MainActivity : AppCompatActivity() {
 
             dialog.show()
         }
-
     }
 
     private fun setupPickers (dialog: Dialog) {
         val grades = arrayOf("A", "B", "C", "D", "E", "F")
         val credits = arrayOf("100", "150", "200", "300", "50")
+
+        var selectedGrade = grades[0]
+        var selectedCredit = credits[0]
 
         dialog.apply {
             gradePicker.minValue = 0
@@ -43,20 +45,22 @@ class MainActivity : AppCompatActivity() {
             creditPicker.minValue = 0
             creditPicker.maxValue = credits.size - 1
             creditPicker.displayedValues = credits
+
+            gradePicker.setOnValueChangedListener { numberPicker, oldValue, newValue -> selectedGrade = "${grades[newValue]}" }
+            creditPicker.setOnValueChangedListener { numberPicker, oldValue, newValue -> selectedCredit = "${credits[newValue]}" }
+
+            btnCancel.setOnClickListener {
+                dismiss()
+            }
         }
-
-
-
-        dialog.gradePicker.setOnValueChangedListener { numberPicker, oldValue, newValue -> gradeValue.text = "${grades[newValue]}" }
-        dialog.creditPicker.setOnValueChangedListener { numberPicker, oldValue, newValue -> creditValue.text = "${credits[newValue]}" }
-
-
         dialog.btnAdd.setOnClickListener {
-            println("Click detected ...")
-        }
-
-        dialog.btnCancel.setOnClickListener {
-            dialog.dismiss()
+            var name = dialog.courseName.text.toString()
+            if (name != "") {
+                courseDisplayTitle.text = name
+                gradeValue.text = selectedGrade
+                creditValue.text = selectedCredit
+                dialog.dismiss()
+            }
         }
     }
 
